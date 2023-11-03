@@ -1,0 +1,52 @@
+VARIABLE SCOPE
+Whenever there is a method invocation, a variable created within the method
+invocation block cannot be used outside of the method block. These includes
+times when OOP is being used, not just when a method is being created. As such    
+the block below counts as a method invocation, which doesn't allow the variable
+b to be used outside of the block.
+
+# scope.rb
+
+a = 5
+
+3.times do |n|    # method invocation with a block
+  a = 3
+  b = 5           # b is initialized in the inner scope
+end
+
+puts a
+puts b            # is b accessible here, in the outer scope?
+
+
+
+CONSTANTS
+Constants cannot be declared in method definitions, and, as such, are available
+throughout the application's scope.
+
+
+
+GLOBAL VARIABLES
+>Available throughout the entire app, overriding all scope boundaries
+>Begin with a dollar sign ($)
+
+
+
+CLASS VARIABLES
+Class variables are declared by starting the variable name with two @ signs. 
+These variables are accessible by instances of your class, as well as the class 
+itself. When you need to declare a variable that is related to a class, but each 
+instance of that class does not need its own value for this variable, you use a 
+class variable. Class variables must be initialized at the class level, outside 
+of any method definitions. They can then be altered using class or instance 
+method definitions.
+
+
+
+INSTANCE VARIABLES
+Instance variables are declared by starting the variable name with one @ sign. 
+These variables are available throughout the current instance of the parent 
+class. Instance variables can cross some scope boundaries, but not all of them. 
+You will learn more about this when you get to OOP topics, and should not use 
+instance variables until you know more about them.
+
+
