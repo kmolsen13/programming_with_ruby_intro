@@ -1,6 +1,4 @@
-y = 0
-3.times do
-  y += 1
-  x = y
-end
-puts x
+=begin
+The first block prints 3. The second block of code throws an error, because x is
+declared within the method instance block. 
+=end

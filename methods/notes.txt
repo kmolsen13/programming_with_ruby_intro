@@ -1,0 +1,81 @@
+DEFAULT PARAMETERS
+You can give a default argument to a method as outlined below. This default
+will appear if no argument is passed when the method is called. 
+
+def say(words = "hello")
+    puts words + "."
+end
+
+say()                       <= will print "hello"
+say("hi")                   <= will print the argument
+say("how are you")          <= will print the argument
+say("I'm fine")             <= will print the argument
+
+
+
+OPTIONAL PARENTHESES
+When calling a method the parentheses are optional, but if called without
+parentheses, this can cause some confusion as methods can be mixed up with local 
+variables
+
+
+
+SCOPE
+Generally, variables defined in a method are not accessible outside of the
+method. However, there are some functions that "mutate" the variable causing
+the changed variable to be accessible outside of the method. See the example
+below.
+
+a = [1, 2, 3]
+
+# Example of a method definition that mutates its argument permanently
+def mutate(array)
+  array.pop
+end
+
+p "Before mutate method: #{a}"      <= returns [1,2,3]
+mutate(a)
+p "After mutate method: #{a}"       <= returns [1,2]
+
+However, the following method does NOT mutate the variable. 
+
+a = [1, 2, 3]
+
+# Example of a method definition that does not mutate the argument
+def no_mutate(array)
+  array.last
+end
+
+p "Before no_mutate method: #{a}"   <= returns [1,2,3]
+no_mutate(a)
+p "After no_mutate method: #{a}"    <= returns [1,2,3]
+
+
+
+RETURN
+Ruby methods will always return the evaluated result of the last line of the
+expression unless an explicit return comes before it
+
+
+
+METHOD CALLS AS ARGUMENTS
+Method calls can be passed as arguments. See the example code below for details
+
+def add(a, b)
+  a + b
+end
+
+def subtract(a, b)
+  a - b
+end
+
+def multiply(num1, num2)
+  num1 * num2
+end
+
+multiply(add(20, 45), subtract(80, 10))
+
+These method calls can be nested. Use parentheses to avoid confusion. See 
+example below
+
+add(subtract(80, 10), multiply(subtract(20, 6), add(30, 5)))
