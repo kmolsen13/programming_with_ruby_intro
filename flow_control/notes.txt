@@ -1,0 +1,61 @@
+IF STATEMENT USING 1-LINE SYNTAX
+1.) if x == 3 then puts "x is 3" end
+2.) puts "x is 3" if x == 3
+
+
+
+UNLESS
+puts "x is NOT 3" unless x == 3
+
+
+
+THE NOT OPERATOR (!)
+When you add "!" in front of a boolean expression, it will change that boolean
+value to its opposite. I.e. !(4 == 4) => what is in the parentheses is
+evaluated first. 
+
+
+
+TERNARY OPERATOR
+true ? "this is true" : "this is not true"      => "this is true"
+false ? "this is true" : "this is not true"     => "this is not true"
+
+
+
+CASE STATEMENT
+You can save the result of a case statement into a variable. See below. 
+
+a = 5
+
+answer = case a
+  when 5
+    "a is 5"
+  when 6
+    "a is 6"
+  else
+    "a is neither 5, nor 6"
+  end
+
+puts answer
+
+
+
+TRUE AND FALSE
+In Ruby, every expression evaluates as true when used in flow control except for
+false and nil. Even 0 or "" (empty string) evaluate as true.
+
+
+
+ASSIGMENT vs EVALUATION
+= is for assignment
+== is for evaluation
+
+Be very careful with these to make sure you understand which one is being used
+and its effects
+
+
+
+NOT NOT OPERATOR
+!!3               # 3 is truthy, !3 is false, !false is true
+!!nil             # nil is false, !nil is true, !true is false
+

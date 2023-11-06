@@ -1,0 +1,124 @@
+SIMPLE LOOP
+loop do
+    puts "This will keep printing until you hit Ctrl + c"
+end
+
+
+
+BREAK
+Breaks a loop preventing an infinite loop. Doesn't exit the program, so
+execution continues on from after the loop. 
+
+
+
+NEXT
+Skips the rest of the code in the current iteration of the loop. 
+
+
+
+SCOPE
+As with any other block in Ruby, the block passed to loop introduces a new 
+scope. From inside the block, you can access variables that were initialized 
+outside of the block. However, from outside the block, you can't access any 
+variables that were initialized inside the block.
+
+loop do
+  x = 42
+  break
+end
+puts x     # Raises an error -- x is not in scope outside of the block
+
+x = 42
+loop do
+  puts x   # Prints 42 -- x is in scope inside the block
+  x = 2    # We can even change the value of x
+  break
+end
+puts x     # 2 -- the value was changed
+
+
+
+WHILE LOOP
+x = gets.chomp.to_i
+
+while x >= 0
+  puts x
+  x -= 1 # <- refactored this line
+end
+
+puts "Done!"
+
+Doesn't have its own scope since it is not implemented as a method. 
+
+
+
+UNTIL LOOP
+x = gets.chomp.to_i
+
+until x < 0
+  puts x
+  x -= 1
+end
+
+puts "Done!"
+
+Doesn't have its own scope since it is not implemented as a method. 
+
+
+
+DO/WHILE LOOP
+loop do
+  puts "Do you want to do that again?"
+  answer = gets.chomp
+  if answer != 'Y'
+    break
+  end
+end
+
+Also: another 
+begin
+  puts "Do you want to do that again?"
+  answer = gets.chomp
+end while answer == 'Y'
+
+
+
+FOR LOOPS
+x = [1, 2, 3, 4, 5]
+
+for i in x.reverse do
+  puts i
+end
+
+puts "Done!"
+
+For loop returns the collection of elements after it executes while the while
+loop returns the value nil. 
+
+Isn't implemented as a method, so doesn't have its own scope. 
+
+
+
+ITERATORS - EACH
+names = ['Bob', 'Joe', 'Steve', 'Janice', 'Susan', 'Helen']
+x = 1
+
+names.each do |name|
+  puts "#{x}. #{name}"
+  x += 1
+end
+
+
+
+RECURSION
+The act of calling a method within itself
+
+def fibonacci(number)
+  if number < 2
+    number
+  else
+    fibonacci(number - 1) + fibonacci(number - 2)
+  end
+end
+
+puts fibonacci(6)
