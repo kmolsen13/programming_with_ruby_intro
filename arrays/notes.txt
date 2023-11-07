@@ -1,0 +1,7 @@
+EACH VS MAP
+
+Each returns the original array while map returns the transformed array (unless
+the transformation is simply to print out the array: then it returns nils)
+
+Rule of thumb: use each for iteration, and use map for transformation
+

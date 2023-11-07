@@ -1,0 +1,31 @@
+REGEX
+irb :001 > "powerball" =~ /b/
+=> 5
+
+irb :002 > /b/ =~ "powerball"
+=> 5
+
+(Order doesn't matter)
+
+
+irb :001 > /b/.match("powerball")
+=> #<MatchData "b">
+
+
+
+STANDARD CLASSES
+Math
+irb :001 > Math.sqrt(400)
+=> 20.0
+
+Time
+irb :003 > t = Time.new(2008, 7, 4)
+=> 2008-07-04 00:00:00 -0400
+irb :004 > t.monday?
+=> false
+irb :005 > t.friday?
+=> true
+
+
+
+BLOCKS AND PROCS

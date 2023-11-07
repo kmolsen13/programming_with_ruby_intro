@@ -1,0 +1,85 @@
+TWO SYNTAXES
+1. :name => "Bob"
+2. name: "Bob"
+
+
+
+
+ADDING TO HASHES
+person[:hair] = "Brown"
+
+
+
+REMOVING FROM HASHES
+person.delete[:age]
+
+
+
+RETRIEVING INFO FROM A HASH
+person[:weight]
+
+
+
+MERGING TWO HASHES
+person.merge!(new_hash)
+
+
+
+ITERATING OVER HASHES
+person.each do |key, value|
+  puts "Bob's #{key} is #{value}"
+end
+
+
+
+EMPTY?
+person.empty? returns a true / false value depending on whether the hash is
+empty
+
+
+
+PASSING HASH VALUES INTO A METHOD
+No need for curly braces. The following are identical in effect.  
+greeting("Bob", {age: 62, city: "New York City"})
+greeting("Bob", age: 62, city: "New York City")
+
+
+
+A NOTE ON HASH KEYS
+Most common use case is symbols. However, other options include string, array,
+integer, float, or hash as a key. Must use the old style (=>) when diverting
+from symbols. 
+
+
+
+KEY?
+Allows you to check if a has contains a specific key
+
+
+
+SELECT
+Allows you to pass a block (k == "Bob") and will return any key-value pairs that 
+evaluate to true when passed to the block. 
+
+irb :004 > name_and_age.select { |k,v| k == "Bob" }
+=> {"Bob"=>42}
+
+
+
+FETCH
+The fetch method allows you to pass a given key and it will return the value for 
+that key if it exists. You can also specify an option for return if that key is 
+not present.
+
+
+
+TO_A (lower case)
+Returns an array version of the has when called
+
+
+
+KEYS AND VALUES
+person.keys returns all keys in an array
+person.values returns all values in an array
+
+
